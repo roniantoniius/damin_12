@@ -1,0 +1,34 @@
+{% extends 'index.html' %} {% block content %}
+<div class="login-box" style="width: 500px;">
+    <h2>Peluang Mengambil Permen</h2>
+    <div id="chart-container"></div>
+    <form>
+
+        <a href="{% url 'beranda' %}">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span> Kembali
+        </a>
+    </form>
+</div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+    // Menampilkan pie chart
+    var candy_names = ['Kit Kat', 'Snickers', 'Milky Way', 'Toblerone', 'Twix'];
+    var candy_counts = [52, 39, 78, 13, 78];
+
+    var data = [{
+        values: candy_counts,
+        labels: candy_names,
+        type: 'pie',
+        textinfo: 'percent',
+        automargin: true
+    }];
+
+    var layout = {
+        title: 'Persentase Peluang Memilih Permen Snickers'
+    };
+
+    Plotly.newPlot('chart-container', data, layout);
+</script>{% endblock %}

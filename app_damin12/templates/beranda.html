@@ -1,0 +1,22 @@
+{% extends 'index.html' %} {% block content %}
+<div class="login-box" style="width: 500px;">
+    <h2>Peluang Mengambil Permen</h2>
+    <form>
+        <div class="user-box">
+            <input type="text" name="" required="" placeholder="Permen Snickers">
+            <label>Daftar Permen</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="" required="">
+            <label>Berapa?</label>
+        </div>
+
+        <a href="{% url 'hasil' %}">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span> Submit
+        </a>
+    </form>
+</div>
+{% endblock %}
